@@ -11,8 +11,10 @@ import {
   Heart,
   Shield,
   ExternalLink,
+  RotateCcw,
 } from "lucide-react";
 import { BottomNavigation } from "@/components/BottomNavigation";
+import { UserPreferencesService } from "@/services/userPreferences";
 import { DesktopNavbar } from "@/components/DesktopNavbar";
 
 export default function SettingsPage() {
@@ -141,6 +143,23 @@ export default function SettingsPage() {
                   <p className="font-label-md text-label-md text-outline mt-2">Version 1.0.4</p>
                 </div>
               </div>
+
+              {/* Reset Onboarding */}
+              <button
+                onClick={() => {
+                  if (window.confirm("รีเซ็ต onboarding และเริ่มต้นใหม่?")) {
+                    UserPreferencesService.resetOnboarding();
+                    window.location.href = "/onboarding";
+                  }
+                }}
+                className="w-full flex items-center justify-between p-4 rounded-xl hover:bg-surface transition-colors group cursor-pointer active:scale-[0.99] focus:outline-none"
+              >
+                <div className="flex items-center gap-4">
+                  <RotateCcw className="w-6 h-6 text-outline group-hover:text-primary transition-colors stroke-[1.5]" />
+                  <span className="font-body-lg text-body-lg text-on-surface">รีเซ็ต Onboarding</span>
+                </div>
+                <ChevronRight className="w-5 h-5 text-outline-variant stroke-[1.5]" />
+              </button>
 
               {/* Privacy Policy */}
               <button className="w-full flex items-center justify-between p-4 rounded-xl hover:bg-surface transition-colors group cursor-pointer active:scale-[0.99] focus:outline-none">

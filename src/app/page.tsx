@@ -7,6 +7,7 @@ import { JourneyCard } from "@/components/JourneyCard";
 import { QuoteCard } from "@/components/QuoteCard";
 import { BottomNavigation } from "@/components/BottomNavigation";
 import { DesktopNavbar } from "@/components/DesktopNavbar";
+import { OnboardingGuard } from "@/components/OnboardingGuard";
 import { StreakInfo, ActivityDay, JourneyMetric, QuoteInfo } from "@/types";
 
 // Mock Data matching the Google Stitch source HTML exactly
@@ -39,48 +40,50 @@ const dailyQuote: QuoteInfo = {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-surface-container-low antialiased">
-      {/* Top Navbar on Desktop */}
-      <DesktopNavbar activeTab="today" />
+    <OnboardingGuard>
+      <div className="min-h-screen bg-surface-container-low antialiased">
+        {/* Top Navbar on Desktop */}
+        <DesktopNavbar activeTab="today" />
 
-      {/* Main Content Container with top offset for fixed desktop bar */}
-      <div className="lg:max-w-[1024px] lg:mx-auto lg:px-6 lg:pt-24">
-        {/* Mobile/Tablet Header */}
-        <Header />
+        {/* Main Content Container with top offset for fixed desktop bar */}
+        <div className="lg:max-w-[1024px] lg:mx-auto lg:px-6 lg:pt-24">
+          {/* Mobile/Tablet Header */}
+          <Header />
 
-        <main className="max-w-[768px] lg:max-w-none mx-auto px-4 lg:px-0 flex flex-col gap-3 pt-16 lg:pt-4 pb-8">
-          {/* Greeting Section */}
-          <section className="pt-1 pb-2">
-            <h2 className="text-lg font-semibold text-primary tracking-tight">
-              สวัสดีตอนเช้า Noah.
-            </h2>
-            <p className="text-sm text-on-surface-variant mt-0.5">
-              วันนี้พร้อมสำหรับ session การคิดหรือยัง?
-            </p>
-          </section>
+          <main className="max-w-[768px] lg:max-w-none mx-auto px-4 lg:px-0 flex flex-col gap-3 pt-16 lg:pt-4 pb-8">
+            {/* Greeting Section */}
+            <section className="pt-1 pb-2">
+              <h2 className="text-lg font-semibold text-primary tracking-tight">
+                สวัสดีตอนเช้า Noah.
+              </h2>
+              <p className="text-sm text-on-surface-variant mt-0.5">
+                วันนี้พร้อมสำหรับ session การคิดหรือยัง?
+              </p>
+            </section>
 
-          {/* Asymmetric Desktop Responsive Layout Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 lg:gap-stack-md items-start">
-            {/* Primary Column (Left) */}
-            <div className="flex flex-col gap-3 lg:gap-stack-md lg:col-span-7">
-              <SessionCard />
-              <QuoteCard quote={dailyQuote} />
+            {/* Asymmetric Desktop Responsive Layout Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 lg:gap-stack-md items-start">
+              {/* Primary Column (Left) */}
+              <div className="flex flex-col gap-3 lg:gap-stack-md lg:col-span-7">
+                <SessionCard />
+                <QuoteCard quote={dailyQuote} />
+              </div>
+
+              {/* Secondary Column (Right) */}
+              <div className="flex flex-col gap-3 lg:gap-stack-md lg:col-span-5">
+                <section className="grid grid-cols-2 gap-3">
+                  <StreakCard streak={streakData} />
+                  <CalendarCard activity={activityData} />
+                </section>
+                <JourneyCard metrics={journeyMetrics} />
+              </div>
             </div>
+          </main>
+        </div>
 
-            {/* Secondary Column (Right) */}
-            <div className="flex flex-col gap-3 lg:gap-stack-md lg:col-span-5">
-              <section className="grid grid-cols-2 gap-3">
-                <StreakCard streak={streakData} />
-                <CalendarCard activity={activityData} />
-              </section>
-              <JourneyCard metrics={journeyMetrics} />
-            </div>
-          </div>
-        </main>
+        {/* Mobile/Tablet Bottom Navigation */}
+        <BottomNavigation activeTab="today" />
       </div>
-
-      {/* Mobile/Tablet Bottom Navigation */}
-      <BottomNavigation activeTab="today" />
-    </div>
+    </OnboardingGuard>
   );
 }
