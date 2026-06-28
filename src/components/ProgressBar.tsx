@@ -10,7 +10,7 @@ export function ProgressBar({ progress }: ProgressBarProps) {
 
   return (
     <div
-      className="fixed top-[72px] left-1/2 -translate-x-1/2 w-full h-1 bg-surface-container-highest max-w-[768px] z-50"
+      className="fixed top-[52px] left-1/2 -translate-x-1/2 w-full h-1 bg-surface-container-highest max-w-[768px] z-50"
       role="progressbar"
       aria-valuenow={widthPercentage}
       aria-valuemin={0}

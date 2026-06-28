@@ -93,12 +93,12 @@ export default function SessionPage() {
       <ProgressBar progress={progressPercentage} />
 
       {/* Main Content Area */}
-      <main className="flex-grow px-margin-main pt-28 pb-12 max-w-[768px] mx-auto w-full flex flex-col">
+      <main className="flex-grow px-4 pt-20 pb-4 max-w-[768px] mx-auto w-full flex flex-col">
         {/* Thinking Card */}
         <ThinkingCard prompt={currentQuestion.prompt} />
 
         {/* Conversational Choices */}
-        <div className="flex flex-col gap-stack-sm w-full mt-auto mb-stack-lg">
+        <div className="flex flex-col gap-2 w-full mt-3 mb-2">
           {currentQuestion.choices.map((choice) => (
             <ChoiceButton
               key={choice.id}
