@@ -112,6 +112,32 @@ body {
   min-height: max(884px, 100dvh);
 }
 
+/* Dark mode overrides */
+.dark body,
+.dark {
+  --color-surface: #1a1f1d;
+  --color-surface-container-low: #111714;
+  --color-surface-container: #1e2421;
+  --color-surface-container-high: #252b28;
+  --color-surface-container-highest: #2c3330;
+  --color-surface-container-lowest: #0e1210;
+  --color-on-surface: #e1e3e0;
+  --color-on-surface-variant: #a0aaa5;
+  --color-outline: #6a7570;
+  --color-outline-variant: #2e3532;
+  --color-primary: #adcec3;
+  --color-on-primary: #0e2520;
+  --color-primary-container: #1e3a33;
+  --color-on-primary-container: #c8eadf;
+  --color-secondary-container: #3a2810;
+  --color-on-secondary-container: #fdc08e;
+  --color-surface-variant: #252b28;
+  --color-background: #111714;
+  --color-on-background: #e1e3e0;
+  --color-inverse-primary: #16342d;
+  --color-primary-fixed-dim: #adcec3;
+}
+
 .soft-shadow {
   box-shadow: 0 4px 20px rgba(45, 75, 67, 0.05);
 }

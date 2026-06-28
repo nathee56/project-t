@@ -48,28 +48,28 @@ export default function Home() {
         {/* Mobile/Tablet Header */}
         <Header />
 
-        <main className="max-w-[768px] lg:max-w-none mx-auto px-margin-main lg:px-0 flex flex-col gap-stack-md pt-20 lg:pt-4 pb-12">
+        <main className="max-w-[768px] lg:max-w-none mx-auto px-4 lg:px-0 flex flex-col gap-3 pt-16 lg:pt-4 pb-8">
           {/* Greeting Section */}
-          <section className="pt-2 pb-4">
-            <h2 className="font-headline-lg-mobile text-headline-lg-mobile text-primary font-medium tracking-tight">
+          <section className="pt-1 pb-2">
+            <h2 className="text-lg font-semibold text-primary tracking-tight">
               สวัสดีตอนเช้า Noah.
             </h2>
-            <p className="font-body-lg text-body-lg text-on-surface-variant mt-1">
+            <p className="text-sm text-on-surface-variant mt-0.5">
               วันนี้พร้อมสำหรับ session การคิดหรือยัง?
             </p>
           </section>
 
           {/* Asymmetric Desktop Responsive Layout Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-stack-md items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 lg:gap-stack-md items-start">
             {/* Primary Column (Left) */}
-            <div className="flex flex-col gap-stack-md lg:col-span-7">
+            <div className="flex flex-col gap-3 lg:gap-stack-md lg:col-span-7">
               <SessionCard />
               <QuoteCard quote={dailyQuote} />
             </div>
 
             {/* Secondary Column (Right) */}
-            <div className="flex flex-col gap-stack-md lg:col-span-5">
-              <section className="grid grid-cols-2 gap-gutter-card">
+            <div className="flex flex-col gap-3 lg:gap-stack-md lg:col-span-5">
+              <section className="grid grid-cols-2 gap-3">
                 <StreakCard streak={streakData} />
                 <CalendarCard activity={activityData} />
               </section>

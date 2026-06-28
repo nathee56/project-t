@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import { DarkModeProvider } from "@/components/DarkModeProvider";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta-sans",
@@ -23,8 +24,10 @@ export default function RootLayout({
       lang="en"
       className={`${plusJakartaSans.variable} h-full antialiased light`}
     >
-      <body className="min-h-full flex flex-col pb-24">
-        {children}
+      <body className="min-h-full flex flex-col pb-24 bg-surface-container-low dark:bg-[#111714] text-on-surface dark:text-[#e1e3e0] transition-colors duration-300">
+        <DarkModeProvider>
+          {children}
+        </DarkModeProvider>
       </body>
     </html>
   );

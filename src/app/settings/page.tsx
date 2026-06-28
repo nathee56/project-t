@@ -30,26 +30,26 @@ export default function SettingsPage() {
       {/* Main Content Container with top offset for fixed desktop bar */}
       <div className="lg:max-w-[1024px] lg:mx-auto lg:px-6 lg:pt-24">
         {/* Mobile/Tablet Header */}
-        <header className="lg:hidden fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[768px] z-40 bg-surface/80 backdrop-blur-md border-b border-surface-variant/20 flex justify-between items-center px-margin-main py-4">
+        <header className="lg:hidden fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[768px] z-40 bg-surface/80 backdrop-blur-md border-b border-surface-variant/20 flex justify-between items-center px-4 py-2.5">
           <button
             aria-label="Menu"
-            className="flex items-center justify-center p-2 -ml-2 text-primary dark:text-primary-fixed-dim hover:bg-surface-container-low dark:hover:bg-primary-container transition-colors duration-300 rounded-full cursor-pointer active:scale-95 transition-transform"
+            className="flex items-center justify-center p-1.5 text-on-surface-variant hover:bg-surface-container transition-colors duration-300 rounded-full cursor-pointer active:scale-95"
           >
-            <AlignLeft className="w-6 h-6 stroke-[1.5]" />
+            <AlignLeft className="w-5 h-5 stroke-[1.5]" />
           </button>
-          <h1 className="font-headline-lg-mobile text-headline-lg-mobile font-semibold text-primary dark:text-primary-fixed-dim">
+          <h1 className="text-sm font-semibold text-primary">
             Project Think
           </h1>
-          <button className="flex items-center justify-center p-2 -mr-2 text-primary dark:text-primary-fixed-dim hover:bg-surface-container-low dark:hover:bg-primary-container transition-colors duration-300 rounded-full cursor-pointer active:scale-95 transition-transform">
-            <span className="font-label-md text-label-md">1 of 4</span>
-          </button>
+          <div className="text-xs px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant">
+            Settings
+          </div>
         </header>
 
-        <main className="max-w-[768px] lg:max-w-none mx-auto px-margin-main lg:px-0 pb-32 pt-20 lg:pt-4 flex flex-col gap-stack-lg relative">
+        <main className="max-w-[768px] lg:max-w-none mx-auto px-4 lg:px-0 pb-24 pt-14 lg:pt-4 flex flex-col gap-3 lg:gap-stack-lg relative">
           {/* Page Header */}
-          <div className="flex flex-col gap-2">
-            <h2 className="font-headline-xl text-headline-xl text-on-surface">การตั้งค่า (Settings)</h2>
-            <p className="font-body-md text-body-md text-on-surface-variant">
+          <div className="flex flex-col gap-0.5">
+            <h2 className="text-lg font-semibold text-on-surface">การตั้งค่า (Settings)</h2>
+            <p className="text-sm text-on-surface-variant">
               จัดการความต้องการและข้อมูลบัญชีของคุณ
             </p>
           </div>
